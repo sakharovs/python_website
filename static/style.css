@@ -1,0 +1,36 @@
+body {
+    font-family: Faberge, Arial, sans-serif;
+    <!-- margin: 40px; -->
+    background-color: #E8E8E8;
+    color: #071E5F;
+    }
+
+    nav {
+        margin-bottom: 20px;
+        background-color: #071E5F;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    nav a {
+        color: white;
+        margin-right: 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+
+    }
+
+    footer {
+        text-align: center;
+        font-size: 0.9em;
+        color: #777;
+        margin-top: 40px;
+    }
+
+    .navbar-custom {
+        background-color: #071e5f;
+    }

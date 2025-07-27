@@ -5,7 +5,7 @@ app = Flask(__name__, template_folder='templates')
 
 @app.route('/update', methods=['POST'])
 def webhook():
-    with open("/home/sakharovs/deploy.log", "a") as f:
+    with open("deploy.log", "a") as f:
         f.write("🔄 Запуск git pull\n")
         result = os.popen('cd /home/sakharovs/sakhar-site/python_website && git pull').read()
         f.write(result + "\n")

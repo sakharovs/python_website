@@ -1,5 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+import os
+
 app = Flask(__name__)
+
+@app.route('/update', methods=['POST'])
+def update():
+    os.system('cd /home/sakharovs/sakhar-site/python_website && git pull')
+    os.system('touch /var/www/sakharovs_pythonanywhere_com_wsgi.py')
+    return 'Updated via GitHub webhook', 200
 
 @app.route("/")
 def home():

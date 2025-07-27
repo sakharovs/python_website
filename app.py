@@ -4,10 +4,14 @@ import os
 app = Flask(__name__, template_folder='templates')
 
 @app.route('/update', methods=['POST'])
-def update():
-    os.system('cd /home/sakharovs/sakhar-site/python_website && git pull')
+def webhook():
+    with open("/home/sakharovs/deploy.log", "a") as f:
+        f.write("🔄 Запуск git pull\n")
+        result = os.popen('cd /home/sakharovs/sakhar-site/python_website && git pull').read()
+        f.write(result + "\n")
     os.system('touch /var/www/sakharovs_pythonanywhere_com_wsgi.py')
-    return 'Updated via GitHub webhook', 200
+    return '✅ Обновлено', 200
+
 
 @app.route("/")
 def home():
